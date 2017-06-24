@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{736A1594-2A90-4824-A1F4-D7E9251FA883}</ProjectGuid>
+    <ProjectTypeGuids>{10368E6C-D01B-4462-8E8B-01FC667A7035};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Xamarin.AndroidThings.RainbowHat</RootNamespace>
+    <AssemblyName>Xamarin.AndroidThings.RainbowHat</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Jars\AboutJars.txt" />
+    <None Include="Additions\AboutAdditions.txt" />
+    <LibraryProjectZip Include="Jars\rainbowhat.aar" />
+  </ItemGroup>
+  <ItemGroup>
+    <TransformFile Include="Transforms\Metadata.xml" />
+    <TransformFile Include="Transforms\EnumFields.xml" />
+    <TransformFile Include="Transforms\EnumMethods.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ReferenceJar Include="Jars\androidthings-0.4-devpreview.jar" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xamarin.AndroidThings.Contrib.Adc\Xamarin.AndroidThings.Contrib.Adc.csproj">
+      <Project>{3389ddfb-8773-4460-8e54-8836c507836c}</Project>
+      <Name>Xamarin.AndroidThings.Contrib.Adc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamarin.AndroidThings.Contrib.Apa102\Xamarin.AndroidThings.Contrib.Apa102.csproj">
+      <Project>{717dc245-c2b7-4383-a102-424108fdefa2}</Project>
+      <Name>Xamarin.AndroidThings.Contrib.Apa102</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamarin.AndroidThings.Contrib.Bmx280\Xamarin.AndroidThings.Contrib.Bmx280.csproj">
+      <Project>{2c9cf5a9-6163-455f-9e22-e52ce6ce48f3}</Project>
+      <Name>Xamarin.AndroidThings.Contrib.Bmx280</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamarin.AndroidThings.Contrib.Button\Xamarin.AndroidThings.Contrib.Button.csproj">
+      <Project>{62fc9d4b-fe58-40cf-af2d-f9d5a14b7206}</Project>
+      <Name>Xamarin.AndroidThings.Contrib.Button</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamarin.AndroidThings.Contrib.Ht16k33\Xamarin.AndroidThings.Contrib.Ht16k33.csproj">
+      <Project>{ab4097c0-9f0f-44cc-a5f7-fab3bd26aa49}</Project>
+      <Name>Xamarin.AndroidThings.Contrib.Ht16k33</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamarin.AndroidThings.Contrib.PwnServo\Xamarin.AndroidThings.Contrib.PwnServo.csproj">
+      <Project>{1a4b4dca-8dac-4373-b91f-bfb5244c1df2}</Project>
+      <Name>Xamarin.AndroidThings.Contrib.PwnServo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamarin.AndroidThings.Contrib.Speaker\Xamarin.AndroidThings.Contrib.Speaker.csproj">
+      <Project>{e9b1ef6f-d33c-4ba3-8da5-47607bffd8fa}</Project>
+      <Name>Xamarin.AndroidThings.Contrib.Speaker</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

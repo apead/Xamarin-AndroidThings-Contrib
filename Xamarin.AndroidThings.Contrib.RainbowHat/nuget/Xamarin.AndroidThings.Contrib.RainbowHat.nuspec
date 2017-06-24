@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Xamarin.AndroidThings.Contrib.RainbowHat</id>
+    <title>Xamarin Android Things Contrib Drivers for RainbowHat</title>
+    <version>0.40</version>
+    <authors>Allan Pead</authors>
+    <owners>Allan Pead</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Xamarin Android Things Contrib Driver Bindings for RainbowHat</summary>
+    <description>
+      Xamarin Android Things Iot Contrib Driver Bindings for RainbowHat
+    </description>
+    <copyright>Copyright © Allan Pead</copyright>
+    <projectUrl>hhttps://github.com/apead/Xamarin-AndroidThings-Contrib</projectUrl>
+    <licenseUrl>https://github.com/apead/Xamarin-AndroidThings-Contrib</licenseUrl>
+  </metadata>
+  <files>
+	<file src="output\Xamarin.AndroidThings.Contrib.Adc.dll" target="lib\MonoAndroid70" />
+    <file src="output\Xamarin.AndroidThings.Contrib.Apa102.dll" target="lib\MonoAndroid70" />
+    <file src="output\Xamarin.AndroidThings.Contrib.Bmx280.dll" target="lib\MonoAndroid70" />
+    <file src="output\Xamarin.AndroidThings.Contrib.Button.dll" target="lib\MonoAndroid70" />
+    <file src="output\Xamarin.AndroidThings.Contrib.Ht16k33.dll" target="lib\MonoAndroid70" />
+    <file src="output\Xamarin.AndroidThings.Contrib.PwnServo.dll" target="lib\MonoAndroid70" />
+    <file src="output\Xamarin.AndroidThings.Contrib.Speaker.dll" target="lib\MonoAndroid70" />
+    <file src="output\Xamarin.AndroidThings.RainbowHat.dll" target="lib\MonoAndroid70" />
+	
+    </files>
+</package>

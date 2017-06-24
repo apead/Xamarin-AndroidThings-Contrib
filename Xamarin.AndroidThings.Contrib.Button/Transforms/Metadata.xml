@@ -1,0 +1,4 @@
+﻿<metadata>
+  <attr path="/api/package[@name='com.google.android.things.contrib.driver.button']/class[@name='Button']" name="managedName">ButtonContrib</attr>
+  <remove-node path="/api/package[@name='com.google.android.things.contrib.driver.button']/class[@name='Button.InterruptCallback']" />
+</metadata>

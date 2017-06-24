@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.AndroidThings.Contrib.Adc", "Xamarin.AndroidThings.Contrib.Adc\Xamarin.AndroidThings.Contrib.Adc.csproj", "{3389DDFB-8773-4460-8E54-8836C507836C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.AndroidThings.Contrib.Apa102", "Xamarin.AndroidThings.Contrib.Apa102\Xamarin.AndroidThings.Contrib.Apa102.csproj", "{717DC245-C2B7-4383-A102-424108FDEFA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.AndroidThings.Contrib.Button", "Xamarin.AndroidThings.Contrib.Button\Xamarin.AndroidThings.Contrib.Button.csproj", "{62FC9D4B-FE58-40CF-AF2D-F9D5A14B7206}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.AndroidThings.Contrib.Ht16k33", "Xamarin.AndroidThings.Contrib.Ht16k33\Xamarin.AndroidThings.Contrib.Ht16k33.csproj", "{AB4097C0-9F0F-44CC-A5F7-FAB3BD26AA49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.AndroidThings.Contrib.PwnServo", "Xamarin.AndroidThings.Contrib.PwnServo\Xamarin.AndroidThings.Contrib.PwnServo.csproj", "{1A4B4DCA-8DAC-4373-B91F-BFB5244C1DF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.AndroidThings.Contrib.Speaker", "Xamarin.AndroidThings.Contrib.Speaker\Xamarin.AndroidThings.Contrib.Speaker.csproj", "{E9B1EF6F-D33C-4BA3-8DA5-47607BFFD8FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.AndroidThings.Contrib.RainbowHat", "Xamarin.AndroidThings.Contrib.RainbowHat\Xamarin.AndroidThings.Contrib.RainbowHat.csproj", "{736A1594-2A90-4824-A1F4-D7E9251FA883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.AndroidThings.Contrib.Bmx280", "Xamarin.AndroidThings.Contrib.Bmx280\Xamarin.AndroidThings.Contrib.Bmx280.csproj", "{2C9CF5A9-6163-455F-9E22-E52CE6CE48F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3389DDFB-8773-4460-8E54-8836C507836C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3389DDFB-8773-4460-8E54-8836C507836C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3389DDFB-8773-4460-8E54-8836C507836C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3389DDFB-8773-4460-8E54-8836C507836C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{717DC245-C2B7-4383-A102-424108FDEFA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{717DC245-C2B7-4383-A102-424108FDEFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{717DC245-C2B7-4383-A102-424108FDEFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{717DC245-C2B7-4383-A102-424108FDEFA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62FC9D4B-FE58-40CF-AF2D-F9D5A14B7206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62FC9D4B-FE58-40CF-AF2D-F9D5A14B7206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62FC9D4B-FE58-40CF-AF2D-F9D5A14B7206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62FC9D4B-FE58-40CF-AF2D-F9D5A14B7206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB4097C0-9F0F-44CC-A5F7-FAB3BD26AA49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB4097C0-9F0F-44CC-A5F7-FAB3BD26AA49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB4097C0-9F0F-44CC-A5F7-FAB3BD26AA49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB4097C0-9F0F-44CC-A5F7-FAB3BD26AA49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A4B4DCA-8DAC-4373-B91F-BFB5244C1DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A4B4DCA-8DAC-4373-B91F-BFB5244C1DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A4B4DCA-8DAC-4373-B91F-BFB5244C1DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A4B4DCA-8DAC-4373-B91F-BFB5244C1DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9B1EF6F-D33C-4BA3-8DA5-47607BFFD8FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9B1EF6F-D33C-4BA3-8DA5-47607BFFD8FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9B1EF6F-D33C-4BA3-8DA5-47607BFFD8FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9B1EF6F-D33C-4BA3-8DA5-47607BFFD8FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{736A1594-2A90-4824-A1F4-D7E9251FA883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{736A1594-2A90-4824-A1F4-D7E9251FA883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{736A1594-2A90-4824-A1F4-D7E9251FA883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{736A1594-2A90-4824-A1F4-D7E9251FA883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C9CF5A9-6163-455F-9E22-E52CE6CE48F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C9CF5A9-6163-455F-9E22-E52CE6CE48F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C9CF5A9-6163-455F-9E22-E52CE6CE48F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C9CF5A9-6163-455F-9E22-E52CE6CE48F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
