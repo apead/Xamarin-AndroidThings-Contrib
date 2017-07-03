@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Xamarin.AndroidThings.WeatherStation.Xamarin.AndroidThings.WeatherStation" android:versionCode="1" android:versionName="1.0">
+  <uses-sdk android:minSdkVersion="16" />
+  <application android:label="Xamarin.AndroidThings.WeatherStation" android:icon="@android:drawable/sym_def_app_icon"
+               android:theme="@android:style/Theme.DeviceDefault.Light">>
+    <uses-library android:name="com.google.android.things" />
+
+  </application>
+</manifest>
