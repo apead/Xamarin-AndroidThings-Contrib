@@ -81,28 +81,28 @@
       <HintPath>..\packages\Xamarin.Android.Things.0.4.0-devpreview\lib\MonoAndroid70\Xamarin.Android.Things.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidThings.Contrib.Adc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.40.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.Adc.dll</HintPath>
+      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.41.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.Adc.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidThings.Contrib.Apa102, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.40.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.Apa102.dll</HintPath>
+      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.41.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.Apa102.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidThings.Contrib.Bmx280, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.40.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.Bmx280.dll</HintPath>
+      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.41.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.Bmx280.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidThings.Contrib.Button, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.40.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.Button.dll</HintPath>
+      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.41.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.Button.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidThings.Contrib.Ht16k33, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.40.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.Ht16k33.dll</HintPath>
+      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.41.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.Ht16k33.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidThings.Contrib.PwnServo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.40.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.PwnServo.dll</HintPath>
+      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.41.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.PwnServo.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidThings.Contrib.Speaker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.40.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.Speaker.dll</HintPath>
+      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.41.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.Contrib.Speaker.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidThings.RainbowHat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.40.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.RainbowHat.dll</HintPath>
+      <HintPath>..\packages\Xamarin.AndroidThings.Contrib.RainbowHat.0.41.0-beta\lib\MonoAndroid70\Xamarin.AndroidThings.RainbowHat.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

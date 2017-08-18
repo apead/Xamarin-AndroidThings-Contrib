@@ -20,6 +20,7 @@ using Xamarin.AndroidThings.WeatherStation.Enum;
 using Xamarin.AndroidThings.WeatherStation.Helpers;
 using Xamarin.AndroidThings.WeatherStation.Hubs;
 using Xamarin.AndroidThings.WeatherStation.Messages;
+using Java.IO;
 
 namespace Xamarin.AndroidThings.WeatherStation
 {
@@ -45,10 +46,10 @@ namespace Xamarin.AndroidThings.WeatherStation
 
         private int[] _rainbow = new int[7];
         private const int LedstripBrightness = 1;
-        private const float BarometerRangeLow = 965f;
-        private const float BarometerRangeHigh = 1035f;
-        private const float BarometerRangeSunny = 1010f;
-        private const float BarometerRangeRainy = 990f;
+        public const float BarometerRangeLow = 965f;
+        public const float BarometerRangeHigh = 1035f;
+        public const float BarometerRangeSunny = 1010f;
+        public const float BarometerRangeRainy = 990f;
 
         private const int SpeakerReadyDelayMs = 300;
 
@@ -78,6 +79,8 @@ namespace Xamarin.AndroidThings.WeatherStation
 
             try
             {
+
+
                 _ledRainbowStrip = new Apa102Contrib(BoardDefaults.GetSpiBus(), Apa102Contrib.Mode.Bgr);
                 _ledRainbowStrip.Brightness = LedstripBrightness;
                 for (var i = 0; i < _rainbow.Length; i++)
@@ -89,7 +92,7 @@ namespace Xamarin.AndroidThings.WeatherStation
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                System.Console.WriteLine(e);
                 _ledRainbowStrip = null;
             }
 
@@ -103,7 +106,7 @@ namespace Xamarin.AndroidThings.WeatherStation
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                System.Console.WriteLine(e);
             }
 
             try
@@ -160,7 +163,7 @@ namespace Xamarin.AndroidThings.WeatherStation
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                System.Console.WriteLine(e);
                 throw;
             }
         }
@@ -274,6 +277,8 @@ namespace Xamarin.AndroidThings.WeatherStation
             if (_ledRainbowStrip == null)
                 return;
 
+            int[] clearColors = new int[_rainbow.Length];
+
             float t = (pressure - BarometerRangeLow) / (BarometerRangeHigh - BarometerRangeLow);
             int n = (int) Math.Ceiling(_rainbow.Length * t);
             n = Math.Max(0, Math.Min(n, _rainbow.Length));
@@ -285,11 +290,12 @@ namespace Xamarin.AndroidThings.WeatherStation
             }
             try
             {
+                _ledRainbowStrip.Write(clearColors);
                 _ledRainbowStrip.Write(colors);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                System.Console.WriteLine(e);
             }
         }
 
@@ -307,7 +313,7 @@ namespace Xamarin.AndroidThings.WeatherStation
                         }
                         catch (Exception exception)
                         {
-                            Console.WriteLine(exception);
+                    System.Console.WriteLine(exception);
                         }
                         return true;
                     }
@@ -326,12 +332,53 @@ namespace Xamarin.AndroidThings.WeatherStation
                     }
                 catch (Exception exception)
                 {
-                    Console.WriteLine(exception);
+                    System.Console.WriteLine(exception);
                 }
                 return true;
             }
 
             return base.OnKeyUp(keyCode, e);
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            if (_display != null)
+            {
+                try
+                {
+                    _display.Clear();
+                    _display.SetEnabled(false);
+                    _display.Close();
+                }
+                catch (IOException e)
+                {
+                    Log.Error(Tag, "Error disabling display", e);
+                }
+                finally
+                {
+                    _display = null;
+                }
+            }
+
+            if (_ledRainbowStrip != null)
+            {
+                try
+                {
+                    _ledRainbowStrip.Write(new int[7]);
+                    _ledRainbowStrip.Brightness = 0;
+                    _ledRainbowStrip.Close();
+                }
+                catch (IOException e)
+                {
+                    Log.Error(Tag, "Error disabling ledstrip", e);
+                }
+                finally
+                {
+                    _ledRainbowStrip = null;
+                }
+            }
         }
     }
 }

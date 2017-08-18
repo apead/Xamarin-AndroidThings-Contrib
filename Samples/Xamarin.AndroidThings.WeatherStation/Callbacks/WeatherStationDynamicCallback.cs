@@ -81,6 +81,9 @@ namespace Xamarin.AndroidThings.WeatherStation.Callbacks
 
             var diff = Math.Abs(_lastPressure - value);
 
+            if (value < MainActivity.BarometerRangeLow) return;
+            if (value > MainActivity.BarometerRangeHigh) return;
+
             if (!(diff > _updateThreshold)) return;
             Log.Debug(Tag, "sensor changed: " + value);
             _lastPressure = value;
