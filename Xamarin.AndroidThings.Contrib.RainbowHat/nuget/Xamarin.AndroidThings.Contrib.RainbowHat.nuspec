@@ -3,7 +3,7 @@
   <metadata>
     <id>Xamarin.AndroidThings.Contrib.RainbowHat</id>
     <title>Xamarin Android Things Contrib Drivers for RainbowHat</title>
-    <version>0.41-beta</version>
+    <version>0.42-beta</version>
     <authors>Allan Pead</authors>
     <owners>Allan Pead</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

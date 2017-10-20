@@ -25,9 +25,8 @@ using Java.IO;
 namespace Xamarin.AndroidThings.WeatherStation
 {
     [Activity(Label = "Weather Station - Azure Iot Hubs")]
-    [IntentFilter(new[] { Intent.ActionMain }, Categories = new[] { Intent.CategoryLauncher })]
+    [IntentFilter(new[] {Intent.ActionMain}, Categories = new[] {Intent.CategoryLauncher})]
     [IntentFilter(new[] { Intent.ActionMain }, Categories = new[] { "android.intent.category.IOT_LAUNCHER", "android.intent.category.DEFAULT" })]
-
     public class MainActivity : Activity
     {
         private double _lastUpdatedPressure;
@@ -54,7 +53,7 @@ namespace Xamarin.AndroidThings.WeatherStation
 
         private const int SpeakerReadyDelayMs = 300;
 
-        private bool _useHubs = false;  //  Set this to true to use Azure Iot Hubs
+        private bool _useHubs = true;  //  Set this to true to use Azure Iot Hubs
 
         public Speaker Speaker;
 
@@ -78,141 +77,20 @@ namespace Xamarin.AndroidThings.WeatherStation
             PubSubHandler.GetInstance().Subscribe<TemperatureMessage>(OnTemperatureMessage);
             PubSubHandler.GetInstance().Subscribe<PressureMessage>(OnPressureMessage);
             PubSubHandler.GetInstance().Subscribe<HumidityMessage>(OnHumidityMessage);
-
-            try
-            {
-
-
-                _ledRainbowStrip = new Apa102Contrib(BoardDefaults.GetSpiBus(), Apa102Contrib.Mode.Bgr);
-                _ledRainbowStrip.Brightness = LedstripBrightness;
-                for (var i = 0; i < _rainbow.Length; i++)
-                {
-                    float[] hsv = {i * 360f / _rainbow.Length, 1.0f, 1.0f};
-
-                    _rainbow[i] = Color.HSVToColor(255, hsv);
-                }
-            }
-            catch (Exception e)
-            {
-                System.Console.WriteLine(e);
-                _ledRainbowStrip = null;
-            }
-
-            try
-            {
-                var pioService = new PeripheralManagerService();
-                _led = pioService.OpenGpio(BoardDefaults.GetLedGpioPin());
-                _led.SetEdgeTriggerType(Gpio.EdgeNone);
-                _led.SetDirection(Gpio.DirectionOutInitiallyLow);
-                _led.SetActiveType(Gpio.ActiveHigh);
-            }
-            catch (Exception e)
-            {
-                System.Console.WriteLine(e);
-            }
-
-            try
-            {
-                _buttonInputDriver = new ButtonInputDriver(BoardDefaults.GetButtonGpioPin(),
-                    ButtonContrib.LogicState.PressedWhenLow,
-                    (int) KeyEvent.KeyCodeFromString("KEYCODE_A"));
-                _buttonInputDriver.Register();
-                Log.Debug(Tag, "Initialized GPIO Button that generates a keypress with KEYCODE_A");
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Error initializing GPIO button", e);
-            }
-
-            try
-            {
-                _bmx280SensorDriver = new Bmx280SensorDriver(BoardDefaults.GetI2cBus());
-                SensorManager.RegisterDynamicSensorCallback(_dynamicSensorCallback);
-                _bmx280SensorDriver.RegisterTemperatureSensor();
-                _bmx280SensorDriver.RegisterPressureSensor();
-                _bmx280SensorDriver.RegisterHumiditySensor();
-                Log.Debug(Tag, "Initialized I2C BMP280");
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Error initializing BMP280", e);
-            }
-
-            try
-            {
-                _display = new AlphanumericDisplay(BoardDefaults.GetI2cBus());
-                _display.SetEnabled(true);
-                _display.Clear();
-                Log.Debug(Tag, "Initialized I2C Display");
-            }
-            catch (Exception e)
-            {
-                Log.Error(Tag, "Error initializing display", e);
-                Log.Debug(Tag, "Display disabled");
-                _display = null;
-            }
-
-
-            try
-            {
-                Speaker = new Speaker(BoardDefaults.GetSpeakerPwmPin());
-                var slide = ValueAnimator.OfFloat(440, 440 * 4);
-                slide.SetDuration(50);
-                slide.RepeatCount = 5;
-                slide.SetInterpolator(new LinearInterpolator());
-                slide.AddUpdateListener(new SlideUpdateListener(this));
-
-                //  slide.Start();
-            }
-            catch (Exception e)
-            {
-                System.Console.WriteLine(e);
-                throw;
-            }
         }
 
         private void InitializeHubs()
         {
             _weatherDevice = new WeatherDevice();
 
-            _weatherDevice.AddTelemetry(new TelemetryFormat {Name = "temperature", DisplayName = "Temp", Type = "Double"},
-                (double) 0);
-            _weatherDevice.AddTelemetry(new TelemetryFormat {Name = "pressure", DisplayName = "hPa", Type = "Double"},
-                (double) 0);
-
-            _weatherDevice.AddTelemetry(new TelemetryFormat { Name = "humidity", DisplayName = "g", Type = "Double" },
-                (double)0);
-
-
-
             _weatherDevice.DeviceId = "[DeviceId]";
             _weatherDevice.DeviceKey = "[DeviceKey]";
             _weatherDevice.HostName = "[HostName]";
 
-            _weatherDevice.SendTelemetryFreq = 60000;
+            _weatherDevice.SendTelemetryFreq = 10000;
             _weatherDevice.Connect();
 
             
-            _weatherDevice.onReceivedMessage += WeatherDevice_onReceivedMessage;
-        }
-
-        private void WeatherDevice_onReceivedMessage(object sender, EventArgs e)
-        {
-            var receivedMessage = e as ReceivedMessageEventArgs;
-
-            if (receivedMessage != null)
-            {
-                if (receivedMessage.Message.Name == "CustomDisplay")
-                {
-                    _displayMode = AlphaNumericDisplayMode.Custom;
-
-                   _display.Display(receivedMessage.Message.MessageId);
-                }
-
-                Log.Debug(Tag, "Message Received: " + receivedMessage.ToString());
-
-
-            }
         }
 
         private void OnTemperatureMessage(TemperatureMessage message)
@@ -228,7 +106,7 @@ namespace Xamarin.AndroidThings.WeatherStation
 
                 if (_useHubs)
                 {
-                    _weatherDevice.UpdateTelemetryData("temperature", message.TemperatureReading);
+                    _weatherDevice.UpdateTemperature(message.TemperatureReading);
                     _weatherDevice.SendTelemetryData = true;
                 }
             }
@@ -249,7 +127,7 @@ namespace Xamarin.AndroidThings.WeatherStation
 
                 if (_useHubs)
                 {
-                    _weatherDevice.UpdateTelemetryData("pressure", message.PressureReading);
+                    _weatherDevice.UpdatePressure(message.PressureReading);
                     _weatherDevice.SendTelemetryData = true;
                 }
             }
@@ -268,7 +146,7 @@ namespace Xamarin.AndroidThings.WeatherStation
 
                 if (_useHubs)
                 {
-                    _weatherDevice.UpdateTelemetryData("humidity", message.HumidityReading);
+                    _weatherDevice.UpdateHumidity(message.HumidityReading);
                     _weatherDevice.SendTelemetryData = true;
                 }
             }

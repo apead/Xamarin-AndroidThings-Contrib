@@ -44,7 +44,7 @@ namespace Xamarin.AndroidThings.WeatherStation.Callbacks
     {
         public static string Tag = typeof(MainActivity).FullName;
         private double _lastTemperature;
-        private double _updateThreshold = 0.5;
+        private double _updateThreshold = 0.1;
 
 
         public void OnAccuracyChanged(Sensor sensor, [GeneratedEnum] SensorStatus accuracy)
@@ -72,7 +72,7 @@ namespace Xamarin.AndroidThings.WeatherStation.Callbacks
     {
         public static string Tag = typeof(MainActivity).FullName;
         private double _lastPressure = 0;
-        private double _updateThreshold = 0.5;
+        private double _updateThreshold = 0.1;
 
 
         public void OnAccuracyChanged(Sensor sensor, [GeneratedEnum] SensorStatus accuracy)

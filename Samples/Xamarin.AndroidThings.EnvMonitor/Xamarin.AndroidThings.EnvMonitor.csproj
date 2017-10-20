@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AECC62E1-A7F9-4729-A8D1-6DC5ED1BE3FB}</ProjectGuid>
+    <ProjectGuid>{0F31DCA5-EADA-400F-86BD-D0A9009FCDE1}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -112,6 +112,7 @@
     <Compile Include="Helpers\PubSub.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Hubs\AzureIoTSuiteRemoteMonitoringHelper.cs" />
+    <Compile Include="Hubs\EnvironmentTelemetry.cs" />
     <Compile Include="Hubs\WeatherDevice.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Messages\PressureMessage.cs" />
